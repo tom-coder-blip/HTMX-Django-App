@@ -1,0 +1,10 @@
+<div id="question-{{ question.id }}">
+    <h3>{{ question.text }}</h3>
+    <p>Options:</p>
+    <ul>
+        {% for option in question.options.all %}
+            <li>{{ option.text }}</li>
+        {% endfor %}
+    </ul>
+    <a hx-get="/question/{{ question.id }}/edit/" hx-target="#quiz-content" class="btn btn-sm btn-warning">Edit</a>
+</div>
